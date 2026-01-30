@@ -513,3 +513,14 @@ a:hover {
 .box a:hover {
     color: #ffffff;
 }
+
+/* =========================
+   Logo Begrenzung (Header)
+   ========================= */
+
+.logo-img {
+    height: 40px;        /* kontrolliert die Navbar-Höhe */
+    max-height: 40px;
+    width: auto;         /* Seitenverhältnis bleibt korrekt */
+    object-fit: contain;
+}
