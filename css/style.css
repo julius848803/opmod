@@ -1,30 +1,57 @@
+/* =========================
+   Global Reset & Variablen
+   ========================= */
+
 * {
     box-sizing: border-box;
 }
 
+:root {
+    --bg-main: #0f0f0f;
+    --bg-header: #151515;
+    --bg-box: #151515;
+    --border-main: #222;
+    --text-main: #eaeaea;
+    --text-muted: #777;
+    --accent: #2a7fff;
+    --accent-hover: #1e63cc;
+    --discord: #5865F2;
+
+    --content-width: 1200px;
+}
+
+/* =========================
+   Base Layout
+   ========================= */
+
 body {
     margin: 0;
     font-family: system-ui, sans-serif;
-    background: #0f0f0f;
-    color: #eaeaea;
+    background: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.5;
 }
 
+/* =========================
+   Header / Navigation
+   ========================= */
+
 .header {
-    background: #151515;
-    border-bottom: 1px solid #222;
+    background: var(--bg-header);
+    border-bottom: 1px solid var(--border-main);
 }
 
 .nav {
-    max-width: 1000px;
+    max-width: var(--content-width);
     margin: auto;
     padding: 1rem;
     display: flex;
-    gap: 1rem;
     align-items: center;
+    gap: 1rem;
 }
 
 .logo {
-    font-weight: bold;
+    font-weight: 700;
     margin-right: auto;
 }
 
@@ -37,50 +64,7 @@ body {
     color: #fff;
 }
 
-.hero {
-    padding: 4rem 1rem;
-    text-align: center;
-}
-
-.section {
-    max-width: 800px;
-    margin: auto;
-    padding: 2rem 1rem;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.8rem 1.4rem;
-    background: #2a7fff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
-}
-
-.btn:hover {
-    background: #1e63cc;
-}
-
-.list {
-    padding-left: 1.2rem;
-}
-
-.footer {
-    text-align: center;
-    padding: 1rem;
-    font-size: 0.9rem;
-    color: #777;
-}
-
-.hero {
-    padding: 4rem 1rem;
-    text-align: center;
-    background:
-        radial-gradient(circle at top right, #5865F2 0%, transparent 40%),
-        radial-gradient(circle at bottom left, #2C2F33 0%, transparent 50%),
-        #0f0f0f;
-}
+/* Discord Icon */
 
 .discord-link img {
     width: 22px;
@@ -94,24 +78,146 @@ body {
     transform: scale(1.1);
 }
 
-.video-section {
-    padding: 2rem 1rem;
+/* =========================
+   Hero Section
+   ========================= */
+
+.hero {
+    padding: 4rem 1rem;
     text-align: center;
+    background:
+        radial-gradient(circle at top right, var(--discord) 0%, transparent 40%),
+        radial-gradient(circle at bottom left, #2C2F33 0%, transparent 50%),
+        var(--bg-main);
 }
 
-.video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    max-width: 800px;
+/* =========================
+   Content Sections
+   ========================= */
+
+.section {
+    max-width: var(--content-width);
     margin: auto;
+    padding: 2rem 1rem;
 }
 
-.video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
+/* =========================
+   Summary Box
+   ========================= */
+
+.summary-box {
+    background: var(--bg-box);
+    border: 1px solid var(--border-main);
+    border-radius: 6px;
+    padding: 1.5rem;
+}
+
+.summary-box h2 {
+    margin-top: 0;
+}
+
+/* Liste bewusst schlicht */
+.summary-list {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.summary-list li {
+    margin-bottom: 0.4rem;
+}
+
+
+/* =========================
+   Buttons
+   ========================= */
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 1.4rem;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.btn:hover {
+    background: var(--accent-hover);
+}
+
+/* =========================
+   Lists
+   ========================= */
+
+.list {
+    padding-left: 1.2rem;
+}
+
+/* =========================
+   Video Section
+   ========================= */
+
+.video-section {
+    max-width: var(--content-width);
+    margin: 4rem auto;
+    padding: 1rem;
+}
+
+.video-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.video-box iframe {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 6px;
+}
+
+/* Video Text Box */
+
+.video-text {
+    background: var(--bg-box);
+    padding: 1.5rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-main);
+}
+
+.video-text h2 {
+    margin-top: 0;
+}
+
+.video-text ul {
+    padding-left: 1.2rem;
+}
+
+/* =========================
+   Footer
+   ========================= */
+
+.footer {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-main);
+}
+
+/* =========================
+   Responsive
+   ========================= */
+
+@media (max-width: 900px) {
+
+    .video-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .video-text {
+        margin-top: 1rem;
+    }
 }
