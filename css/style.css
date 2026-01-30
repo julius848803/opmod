@@ -524,3 +524,38 @@ a:hover {
     width: auto;         /* Seitenverhältnis bleibt korrekt */
     object-fit: contain;
 }
+
+/* =========================
+   Feature Gallery Grid
+   ========================= */
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.feature-card {
+    background: var(--bg-box);
+    border: 1px solid var(--border-main);
+    border-radius: 6px;
+    padding: 1rem;
+}
+
+.feature-card img {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 0.8rem;
+}
+
+.feature-card h3 {
+    margin: 0 0 0.4rem 0;
+    font-size: 1.1rem;
+}
+
+.feature-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #d0d0d0;
+}
