@@ -481,3 +481,35 @@ header {
     margin: 0;
     color: #d0d0d0;
 }
+
+.feature-list {
+    list-style-type: disc;
+    padding-left: 1.4rem;
+    margin-top: .8rem;
+}
+
+.feature-list li {
+    margin-bottom: .5rem;
+}
+
+/* =========================
+   Links (global)
+   ========================= */
+
+a {
+    color: #eaeaea;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.box a {
+    color: #d0d0d0;
+}
+
+.box a:hover {
+    color: #ffffff;
+}
